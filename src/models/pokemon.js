@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-new mongoose.Schema({
+const schema = new mongoose.Schema({
     pokedexNum: Number,
     name: String,
     type1: String,
@@ -16,4 +16,4 @@ new mongoose.Schema({
     legendary: Boolean
 })
 
-export default mongoose.model('Pokemon', schema)
+export default mongoose.models.Pokemon || mongoose.model('Pokemon', schema)

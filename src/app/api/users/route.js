@@ -1,18 +1,18 @@
 import { connectDB } from "@/libs/mongodb"
-import Pokemon from '@/models/user';
+import User from '@/models/user';
 import { NextResponse } from "next/server";
 
-export async function GET(){
+export async function GET() {
     await connectDB()
 
-    const pokemons = await Pokemon.find()
-    return NextResponse.json(pokemons)
+    const users = await User.find()
+    return NextResponse.json(users)
 }
 
-export async function POST(request){
+export async function POST(request) {
     await connectDB()
     const data = await request.json() 
 
-    const pokemons = await Pokemon.create(data)
-    return NextResponse.json(pokemons)
+    const users = await User.create(data)
+    return NextResponse.json(users)
 }
