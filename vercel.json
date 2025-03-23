@@ -7,6 +7,6 @@
       }
     ],
     "env": {
-      "MONGODB_URL": "@mongodb_url"
+      "MONGODB_URL": "mongodb://localhost:27017/nextmongo?retryWrites=true&w=majority"
     }
 }
